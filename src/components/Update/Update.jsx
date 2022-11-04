@@ -72,7 +72,7 @@ const Update = () => {
         </div>
       </div>
       <h1 className="text-center text-4xl font-black mb-8">Post Transaction</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 ml-auto max-w-5xl gap-4 p-4 rounded-md ">
+      <div className="grid grid-cols-1 lg:grid-cols-2  md:ml-auto md:max-w-5xl  gap-4 md:p-4 rounded-md ">
         <div className="form-control">
           <label className="input-group">
             <span>Transaction Id *</span>
@@ -81,7 +81,7 @@ const Update = () => {
               value={id}
               onChange={(e) => setId(e.target.value)}
               placeholder="Transaction Id"
-              className="input input-bordered"
+              className="input input-bordered w-full lg:w-auto"
               required
             />
           </label>
@@ -94,7 +94,7 @@ const Update = () => {
               value={from}
               onChange={(e) => setFrom(e.target.value.trim())}
               placeholder="from"
-              className="input input-bordered"
+              className="input input-bordered w-full lg:w-auto"
             />
           </label>
         </div>
@@ -106,7 +106,7 @@ const Update = () => {
               value={to}
               onChange={(e) => setTo(e.target.value.trim())}
               placeholder="to"
-              className="input input-bordered"
+              className="input input-bordered w-full lg:w-auto"
             />
           </label>
         </div>
@@ -118,12 +118,12 @@ const Update = () => {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="amount"
-              className="input input-bordered"
+              className="input input-bordered w-full lg:w-auto"
             />
           </label>
         </div>
       </div>
-      <div className="w-full flex justify-center mt-2">
+      <div className="w-full flex justify-center mt-4">
         <button
           className="btn btn-secondary btn-wide text-white"
           onClick={() => putTransaction(from, to, amount, id)}

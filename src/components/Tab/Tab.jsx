@@ -63,7 +63,7 @@ const Tab = () => {
           <Link
             key={idx}
             to={tab.to}
-            className={`tab tab-lg transition-all ${
+            className={`tab tab-md md:tab-lg transition-all ${
               tab.active && "tab-active"
             }`}
             onClick={() => tabActive(idx)}

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="px-8 py-4">
+    <div className="px-8 py-4 mb-4">
       {/* <Link to={"/"}> */}
-      <button className="btn glass btn-primary text-4xl font-medium italic">
+      <h1 className="text-5xl text-center lg:text-start font-medium italic">
         My Transactions
-      </button>
+      </h1>
       {/* </Link> */}
     </div>
   );

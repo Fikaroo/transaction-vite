@@ -25,7 +25,7 @@ const Read = () => {
     getTransaction();
   }, []);
   return (
-    <div className="w-full mx-auto max-w-7xl p-10  bg-white shadow-2xl rounded-lg transition-all">
+    <div className="w-full mx-auto max-w-7xl p-2 md:p-10  bg-white shadow-2xl rounded-lg transition-all">
       <h1 className="text-center text-4xl font-black mb-8">Get Transaction</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-items-center p-4 rounded-md">
         <div className="form-control">
@@ -36,7 +36,7 @@ const Read = () => {
               value={from}
               onChange={(e) => setFrom(e.target.value.trim())}
               placeholder="from"
-              className="input input-bordered"
+              className="input input-bordered  w-full lg:w-auto"
             />
           </label>
         </div>
@@ -48,7 +48,7 @@ const Read = () => {
               value={to}
               onChange={(e) => setTo(e.target.value.trim())}
               placeholder="to"
-              className="input input-bordered"
+              className="input input-bordered  w-full lg:w-auto"
             />
           </label>
         </div>
