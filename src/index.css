@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.table,
+.table-compact {
+  @apply text-white;
+}
+
+.table-compact thead th,
+.table thead th {
+  @apply bg-secondary;
+}
+
+.table-compact tbody th,
+.table tbody th,
+.table tbody td,
+.table-compact tbody td {
+  @apply bg-primary;
+}
+
+.table-zebra tbody tr:nth-child(even) th,
+.table-zebra tbody tr:nth-child(even) td {
+  @apply bg-secondary;
+}
+
+.input {
+  @apply focus:outline-none;
+}
+
+.input-group :where(span) {
+  @apply bg-secondary text-white font-medium;
+}
+
+.tabs {
+  @apply p-2;
+}
+
+.tab {
+  @apply outline-none hover:outline-none focus:outline-none active:outline-none;
+}
+
+.tab.tab-active {
+  @apply text-white hover:text-white hover:scale-105;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
