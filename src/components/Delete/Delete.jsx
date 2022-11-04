@@ -60,7 +60,7 @@ const Delete = () => {
         </div>
       </div>
       <h1 className="text-center text-4xl font-black mb-8">Post Transaction</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 ml-auto max-w-5xl gap-4 p-4 rounded-md ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 ml-auto max-w-5xl gap-4 p-4 rounded-md ">
         <div className="form-control">
           <label className="input-group">
             <span>Transaction Id *</span>
@@ -69,7 +69,7 @@ const Delete = () => {
               value={id}
               onChange={(e) => setId(e.target.value)}
               placeholder="Transaction Id"
-              className="input input-bordered"
+              className="input input-bordered  w-full lg:w-auto"
               required
             />
           </label>
