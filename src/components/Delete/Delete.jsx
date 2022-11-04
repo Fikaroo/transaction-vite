@@ -75,7 +75,7 @@ const Delete = () => {
           </label>
         </div>
         <button
-          className="btn btn-secondary btn-wide text-white"
+          className="btn btn-secondary btn-wide text-white  w-full lg:w-auto"
           onClick={() => deleteTransaction(id)}
         >
           Execute
