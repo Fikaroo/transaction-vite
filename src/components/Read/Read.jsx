@@ -10,6 +10,10 @@ const Read = () => {
     let res;
     if (from && to) {
       res = await axios.get(`${baseUrl}?from=${from}&to=${to}`);
+    } else if (from) {
+      res = await axios.get(`${baseUrl}?from=${from}`);
+    } else if (to) {
+      res = await axios.get(`${baseUrl}?to=${to}`);
     } else {
       res = await axios.get(baseUrl);
     }
@@ -24,6 +28,7 @@ const Read = () => {
   useEffect(() => {
     getTransaction();
   }, []);
+
   return (
     <div className="w-full mx-auto max-w-7xl p-2 md:p-10  bg-white shadow-2xl rounded-lg transition-all">
       <h1 className="text-center text-4xl font-black mb-8">Get Transaction</h1>
@@ -72,7 +77,7 @@ const Read = () => {
             </tr>
           </thead>
           <tbody>
-            {transactionData &&
+            {transactionData ? (
               transactionData.map((transaction) => (
                 <tr key={transaction.id}>
                   <th>{transaction.id}</th>
@@ -80,7 +85,10 @@ const Read = () => {
                   <td>{transaction.to}</td>
                   <td>{transaction.amount}</td>
                 </tr>
-              ))}
+              ))
+            ) : (
+              <div>Loading...</div>
+            )}
           </tbody>
         </table>
       </div>
