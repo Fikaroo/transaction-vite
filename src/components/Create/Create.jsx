@@ -96,6 +96,7 @@ const Create = () => {
               onChange={(e) => setAmount(e.target.value.trim())}
               placeholder="amount"
               className="input input-bordered"
+              required
             />
           </label>
         </div>
