@@ -9,13 +9,9 @@ const Delete = () => {
   const deleteTransaction = async (id) => {
     const res = await axios.delete(`${baseUrl}/${id}`).catch(() => {
       setMsg("Something is wrong!");
-      setMsgClass(
-        "absolute max-w-max right-[43%] p-4 alert alert-error text-white shadow-lg animate-in slide-in-from-top top-8 duration-500"
-      );
+      setMsgClass("slideInModalError");
       setTimeout(() => {
-        setMsgClass(
-          "absolute max-w-max right-[43%] p-4 alert alert-error text-white shadow-lg top-8 duration-500 animate-out slide-out-to-top"
-        );
+        setMsgClass("slideOutModalError");
       }, 600);
 
       setTimeout(() => {
@@ -24,13 +20,9 @@ const Delete = () => {
     });
     if (res.status === 200) {
       setMsg("Your transition deleted successful!");
-      setMsgClass(
-        "absolute max-w-max right-[39%] p-4 alert alert-success text-white shadow-lg animate-in slide-in-from-top top-8 duration-500"
-      );
+      setMsgClass("slideInModal");
       setTimeout(() => {
-        setMsgClass(
-          "absolute max-w-max right-[39%] p-4 alert alert-success text-white shadow-lg top-8 duration-500 animate-out slide-out-to-top"
-        );
+        setMsgClass("slideOutModal");
       }, 600);
 
       setTimeout(() => {
@@ -75,7 +67,7 @@ const Delete = () => {
           </label>
         </div>
         <button
-          className="btn btn-secondary btn-wide text-white  w-full lg:w-auto"
+          className="btn btn-secondary lg:btn-wide text-white  w-full"
           onClick={() => deleteTransaction(id)}
         >
           Execute

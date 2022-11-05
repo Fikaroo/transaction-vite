@@ -18,13 +18,9 @@ const Update = () => {
       })
       .catch(() => {
         setMsg("Something is wrong!");
-        setMsgClass(
-          "absolute max-w-max right-[43%] p-4 alert alert-error text-white shadow-lg animate-in slide-in-from-top top-8 duration-500"
-        );
+        setMsgClass("slideInModalError");
         setTimeout(() => {
-          setMsgClass(
-            "absolute max-w-max right-[43%] p-4 alert alert-error text-white shadow-lg top-8 duration-500 animate-out slide-out-to-top"
-          );
+          setMsgClass("slideOutModalError");
         }, 600);
 
         setTimeout(() => {
@@ -33,18 +29,14 @@ const Update = () => {
       });
     if (res.status === 200) {
       setMsg("Your transition changed successful!");
-      setMsgClass(
-        "absolute max-w-max right-[39%] p-4 alert alert-success text-white shadow-lg animate-in slide-in-from-top top-8 duration-500"
-      );
+      setMsgClass("slideInModal");
       setTimeout(() => {
-        setMsgClass(
-          "absolute max-w-max right-[39%] p-4 alert alert-success text-white shadow-lg top-8 duration-500 animate-out slide-out-to-top"
-        );
+        setMsgClass("slideOutModal");
       }, 600);
 
       setTimeout(() => {
         setMsgClass("hidden");
-      }, 900);
+      }, 1000);
       setAmount(0);
       setFrom("");
       setTo("");

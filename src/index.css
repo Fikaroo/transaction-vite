@@ -12,6 +12,22 @@
   @apply bg-secondary;
 }
 
+.table-compact thead :where(*:first-child) {
+  @apply rounded-tl-lg;
+}
+
+.table-compact thead :where(*:last-child) {
+  @apply rounded-tr-lg;
+}
+
+.table-compact tbody :where(*:last-child) :where(th, td):first-child {
+  @apply rounded-bl-lg;
+}
+
+.table-compact tbody :where(*:last-child) :where(th, td):last-child {
+  @apply rounded-br-lg;
+}
+
 .table-compact tbody th,
 .table tbody th,
 .table tbody td,
@@ -54,4 +70,22 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+@layer components {
+  .slideInModalError {
+    @apply absolute max-w-max p-2 left-1/3 md:left-[40%]    lg:p-4 alert alert-error lg:text-base text-sm text-white shadow-lg animate-in slide-in-from-top top-8 duration-500;
+  }
+
+  .slideOutModalError {
+    @apply absolute max-w-max p-2 left-1/3  md:left-[40%]   lg:p-4 alert alert-error lg:text-base text-sm text-white shadow-lg top-8 duration-500 animate-out slide-out-to-top;
+  }
+
+  .slideInModal {
+    @apply absolute max-w-max p-2 left-1/4  md:left-[40%]  lg:p-4 alert alert-success lg:text-base text-sm text-white shadow-lg animate-in slide-in-from-top top-8 duration-500;
+  }
+
+  .slideOutModal {
+    @apply absolute max-w-max p-2 left-1/4 md:left-[40%]   lg:p-4 alert alert-success lg:text-base text-sm text-white shadow-lg top-8 duration-500 animate-out slide-out-to-top;
+  }
 }
